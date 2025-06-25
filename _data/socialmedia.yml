@@ -1,0 +1,26 @@
+#- name: YouTube
+ # url: http://www.youtube.com/@Retr0680
+ # class: icon-youtube
+ # title: "Check out my Videos"
+
+# - name: Twitter
+#  url: http://twitter.com/retr0_680
+ # class: icon-twitter
+#  title: "Immer das Neuste von Retr0 gibt es auf Twitter"
+
+
+
+# - name: Facebook
+#   url: http://www.facebook.com/
+#   class: icon-facebook
+#   title: ""
+
+# - name: Soundcloud
+#   url: http://soundcloud.com/
+#   class: icon-soundcloud
+#   title: ""
+
+# - name: Instagram
+#   url: http://instagram.com/
+#   class: icon-instagram
+#   title: ""

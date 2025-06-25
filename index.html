@@ -1,0 +1,63 @@
+---
+layout: default
+show_logo: true
+---
+
+<!-- Main content wrapper -->
+<main class="homepage">
+  <!-- Intro section with welcome message and button -->
+  <section class="intro">
+    <div style="padding-top: 50px; padding-bottom: 30px;">
+      <h3>Welcome to the library of knowledge provided to you by Retr0_680.</h3>
+        <h6><a href=/shop><b><i>Products</i></b></a> are services soon-to-be provided such as a customized iso file or a utility to easily apply optimizations. The <a href=/info><b><i>About</i></b></a> section is where you can learn more about Retr0's Library and Retr0.<a href=/library><b><i>Library</i></b></a> contains all of my article uploads and the bulk of my optimization research. If you run into a topic that I haven't covered feel free to let me know via my <a href=/contact><b><i>Discord</i></b></a></h6>
+    </div>
+    <!-- Button that links to a separate page showing all blog posts -->
+    <a href="{{ site.baseurl }}/library/" class="view-posts-button">View All Posts</a>
+  </section>
+</main>
+
+<!-- Inline styles for this page -->
+<style>
+  /* Style the site header */
+  .site-header {
+    text-align: center;
+    padding: 2rem;
+    background: #f4f4f4; /* Light grey background */
+  }
+
+  /* Make the site title link look nice */
+  .site-header a {
+    text-decoration: none;
+    color: #333;
+    font-size: 2rem;
+  }
+
+  /* Center the homepage content */
+  .homepage {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  /* Style for the intro content block */
+  .intro {
+    max-width: 600px;
+    text-align: center;
+  }
+
+  /* Button to view all posts */
+  .view-posts-button {
+    display: inline-block;
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #007acc; /* Blue */
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+  }
+
+  /* Button hover effect */
+  .view-posts-button:hover {
+    background-color: #005f99; /* Darker blue on hover */
+  }
+</style>

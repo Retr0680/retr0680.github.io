@@ -1,0 +1,37 @@
+//
+// VARIABLES
+//
+
+// Colors
+$blue: #4183C4;
+
+// Grays
+$black:      #000;
+$darkerGray: #222;
+$darkGray:   #333;
+$gray:       #666;
+$lightGray:  #eee;
+$white:      #fff;
+
+// Font stacks
+$helvetica:      Helvetica, Arial, sans-serif;
+$helveticaNeue:  "Helvetica Neue", Helvetica, Arial, sans-serif;
+$georgia:        Georgia, serif;
+
+// Mobile breakpoint mixin
+@mixin mobile {
+  @media screen and (max-width: 640px) {
+    @content;
+  }
+}
+
+// -----------------------------------------
+// Dark‑mode overrides for all Foundation defaults
+// (They all use !default, so redefining them here flips every component.)
+// -----------------------------------------
+
+$white            : $black                                 !default;
+$white-smoke      : $darkGray                              !default;
+$secondary-color  : $darkGray                              !default;
+$body-bg          : $black                                 !default;
+$shiny-edge-color : rgba($darkGray, 0.5)                   !default;
