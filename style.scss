@@ -17,9 +17,9 @@ html {
 }
 
 body {
-	background: $black;
+	background: $white;
   font: 18px/1.4 $helvetica;
-  color: $lightGray;
+  color: $darkGray;
 }
 
 .container {
@@ -31,7 +31,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: $helveticaNeue;
-  color: $lightGray;
+  color: $darkerGray;
   font-weight: bold;
 
   line-height: 1.7;
@@ -125,8 +125,8 @@ img {
   background: $lightGray;
 }
 ::selection {
-  color: $lightGray;
-  background: $darkGray;
+  color: $black;
+  background: $lightGray;
 }
 
 // Nicolas Gallagher's micro clearfix hack
@@ -224,7 +224,7 @@ nav {
 
   a {
     margin-left: 20px;
-    color: $lightGray;
+    color: $darkGray;
     text-align: right;
     font-weight: 300;
     letter-spacing: 1px;
@@ -272,9 +272,9 @@ nav {
 
 .wrapper-footer {
   margin-top: 50px;
-  border-top: 1px solid $darkGray;
-  border-bottom: 1px solid $darkGray;
-  background-color: $darkGray;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  background-color: $lightGray;
 }
 
 footer {
