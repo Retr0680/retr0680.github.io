@@ -4,7 +4,7 @@ title: Meet Retr0
 permalink: /aboutretr0
 ---
 
-<p>Hey! I’m Retr0 well, that’s what most people know me as. My real name exists somewhere, but online I go by Retr0.
+<p>Hey! I’m Retr0 well, that’s what most people know me as. My real name exists somewhere, but online I go by Retr0.</p>
 
 <p>My journey into tech and optimizations started way before I knew what a registry tweak even was. The first game I ever played was GTA Vice Cite on my brothers PC. That game still holds a special place in my heart. Eventually, I branched out into Project IGI, Call of duty Black ops 3.</p>
 
