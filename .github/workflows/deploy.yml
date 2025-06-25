@@ -1,9 +1,9 @@
-name: Deploy to GitHub Pages (main branch)
+name: Deploy to GitHub Pages (experiment branch)
 
 on:
   push:
     branches:
-      - master
+      - experiment
   workflow_dispatch:
 
 permissions:
