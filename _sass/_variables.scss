@@ -25,12 +25,3 @@ $georgia: Georgia, serif;
     @content;
   }
 }
-
-// -----------------------------------------
-// Dark-mode overrides
-// -----------------------------------------
-$white            : $black                                 !default;
-$white-smoke      : $darkGray                              !default;
-$secondary-color  : $darkGray                              !default;
-$body-bg          : $black                                 !default;
-$shiny-edge-color : rgba($darkGray, 0.5)                   !default;
