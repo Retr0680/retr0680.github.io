@@ -18,7 +18,7 @@
   url: "/info/"
   side: left
 #
-- title: "☀️/🌙 Soon"
+- title: "☀️/🌙"
   url: '#'
   side: right
   is_button: true
