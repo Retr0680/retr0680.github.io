@@ -10,9 +10,20 @@
   url: "/library/"
   side: left
 #
+- title: Contribute
+  url: "/contribute/"
+  side: left
+#
 - title: "About"
   url: "/info/"
   side: left
+#
+- title: "☀️/🌙 Soon"
+  url: '#'
+  side: right
+  is_button: true
+
+
 
 #- title: "Search"
 #  url: "/search/"
