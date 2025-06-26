@@ -10,7 +10,7 @@ permalink: "/contact/"
 If you need to reach out to me, I suggest you use the following link 
 </div>
 
-[Discord](https://discord.gg/) — Join the server and @ me @retr0_680
+[Discord](https://discord.gg/k8vMXBXsfE) — Join the server and @ me @retr0_680 or you can join my [telegram channel](https://t.me/Retr0680)
 
 <div style="padding-top: 20px; padding-bottom: 30px;">
 Business Email: dedsecretr0680@gmail.com
