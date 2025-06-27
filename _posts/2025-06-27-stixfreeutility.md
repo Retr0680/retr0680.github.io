@@ -9,8 +9,7 @@ Stix is a YouTuber and optimizer (over 1yr+). All information regarding the free
 
 
 
-
-[Youtube Video Summary](https://www.youtube.com/watch?v=LRijhBlQDG4)
+Thanks to khorvie for making a [Youtube Video Summary](https://www.youtube.com/watch?v=LRijhBlQDG4)
 
 
 
