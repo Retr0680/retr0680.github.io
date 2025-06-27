@@ -769,4 +769,6 @@ schtasks /Change /TN "Microsoft\Windows\Printing\PrinterCleanupTask" /Disable >n
 
 
 
-##### End of Article, feel free to reach out to me if you notice any errors or typos and I will gladly adjust. Retr0
+
+
+###### End of Article, feel free to reach out to me if you notice any errors or typos and I will gladly adjust. Retr0
