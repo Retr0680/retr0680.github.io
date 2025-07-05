@@ -5,7 +5,7 @@ permalink: /shop/
 ---
 
 <p>
-  <a href="/retr0OS/" class="button">Synergy OS</a>
+  <a href="/retr0OS/" class="button">Retr0OS</a>
 </p>
 
 <h3>Retr0's Toolbox is under development</h3>
