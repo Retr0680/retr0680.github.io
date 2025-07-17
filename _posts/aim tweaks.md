@@ -2,7 +2,7 @@
 layout: post
 title: "Aim Tweaks"
 date: 
-permalink: /aimtweak/
+permalink: /aimweak/
 ---
 
 ##### In this article I cover 'Aim Tweaks' from Aphrodite, Risxn, Better Tweaks
