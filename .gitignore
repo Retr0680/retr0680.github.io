@@ -8,7 +8,7 @@ Gemfile
 Gemfile.lock
 node_modules
 package.json
-
+/images/steam/steamtools.gif
 # ---
 # show_logo: true
 # ---
