@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Fix integrity and root detection"
-date: 2025-06-04
+date: 2025-10-28
 permalink: /play_integrity/
 ---
 Step by step guide on how to fix play integrity and root detection.
@@ -43,4 +43,4 @@ If you are using any custom ROMs, make sure to disable any integrity fix spoof t
 
 Your integrity should be fixed now. You can check integrity using [this app](https://play.google.com/store/apps/details?id=gr.nikolasspyr.integritycheck).
 
----
+##### End of Article, feel free to reach out to me if you notice any errors or typos and I will gladly adjust. Retr0
