@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "Fix integrity and root detection"
+title: "Fix Play Integrity and Root Detection"
 date: 2025-10-28
-permalink: /play_integrity/
+permalink: /pif/
 ---
 Step by step guide on how to fix play integrity and root detection.
 <!--more-->
