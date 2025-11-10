@@ -17,12 +17,17 @@ The wiring diagram is very simple, just follow the table below.
 
 Now that you're done with the wiring it is time to flash the bootloader.
 But before we begin you first have to prepare your arduino uno as programmer, for that open your `arduino ide` click on `File < Examples < ArduinoISP`, Once the ISP code is opened go ahead and upload the sketch on your board.
+
 ![ArduinoISP](/images/pro_micro/1.png)
+
 ![ArduinoISP](/images/pro_micro/isp.png)
 
 Once you're done with uploading the sketch go ahead and select your board and flash the bootloader.
+
 ![ToolsBoardArduinoLeonardo](/images/pro_micro/2.png)
+
 ![ToolsProgrammerArduinoAsISP](/images/pro_micro/3.png)
+
 ![BurnBootloader](/images/pro_micro/4.png)
 
 Now that you've flashed your board now disconnect the board and power it up. if the board led turns on, congratulations on fixing your bricked Arduino Pro Micro.
