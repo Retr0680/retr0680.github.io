@@ -1,0 +1,14 @@
+baseURL = "https://retr0680.github.io/"
+languageCode = "en-us"
+title = "Retr0's Library"
+theme = "PaperMod"
+paginate = 5
+enableRobotsTXT = true
+
+[params]
+    description = "Tech solutions, tutorials, and tinkering notes."
+    author = "Retr0"
+    ShowReadingTime = true
+    disableHomeRecentPosts = false
+    customCSS = ["css/custom.css"]
+    search = true
