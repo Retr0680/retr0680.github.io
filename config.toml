@@ -6,9 +6,11 @@ paginate = 5
 enableRobotsTXT = true
 
 [params]
-    description = "Tech solutions, tutorials, and tinkering notes."
-    author = "Retr0"
-    ShowReadingTime = true
-    disableHomeRecentPosts = false
-    customCSS = ["css/custom.css"]
-    search = true
+  description = "Tech solutions, tutorials, and tinkering notes."
+  author = "Retr0"
+  ShowReadingTime = true
+  disableHomeRecentPosts = false
+  defaultTheme = "dark"
+  ShowCodeCopyButtons = true
+  customCSS = ["css/custom.css"]
+  search = true
