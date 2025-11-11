@@ -1,0 +1,13 @@
+pre {
+  border: 1px solid rgba(255,255,255,0.1);
+  background-color: #1e1e1e;
+  color: #dcdcdc;
+  padding: 0.9rem;
+  border-radius: 0.5rem;
+  overflow: auto;
+}
+.code-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
