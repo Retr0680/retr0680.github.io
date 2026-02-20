@@ -5,23 +5,146 @@ date: 2025-06-04
 permalink: /cachy/
 ---
 
+# Secure Boot Setup on CachyOS (systemd-boot)
 
-    Enter BIOS and ensure secure boot is off (set to Custom OS on my ASUS board).
+This guide documents the complete process of enabling Secure Boot on CachyOS (Arch-based) using `systemd-boot` and `sbctl`.
 
-    Delete system keys in BIOS (enter Secure Boot setup mode). Save BIOS settings and exit.
+## Requirements
 
-    Boot into CachyOS.
+- UEFI mode enabled (CSM disabled)
+    
+- systemd-boot as bootloader
+    
+- `sbctl` installed
+    
+- Root access
+    
 
-    sudo pacman -S sbctl
+* * *
 
-    sudo grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=cachyos --modules="tpm" --disable-shim-lock
+## 1\. Install Required Packages
+```
+sudo pacman -S sbctl mokutil
+```
+* * *
 
-    sudo sbctl create-keys
+## 2\. Check Current Secure Boot Status
+```
+mokutil --sb-state
+```
+If it shows:
 
-    sudo sbctl enroll-keys --microsoft
+SecureBoot disabled  
+Platform is in Setup Mode
 
-    sudo sbctl-batch-sign
+You are ready to enroll your own keys.
 
-    Reboot and re-enable secure boot in BIOS (for my ASUS board change OS to "Windows UEFI mode")
+* * *
 
-    All should be working now. Can confirm from Linux cli with sudo sbctl status and should see Secure-Boot as Enabled.
+## 3\. Create Secure Boot Keys
+```
+sudo sbctl create-keys
+```
+* * *
+
+## 4\. Remove Immutable Flags (If Required)
+
+If enrollment fails with “File is immutable”:
+```
+sudo chattr -i /sys/firmware/efi/efivars/PK-\*  
+sudo chattr -i /sys/firmware/efi/efivars/KEK-\*  
+sudo chattr -i /sys/firmware/efi/efivars/db-\*
+```
+* * *
+
+## 5\. Enroll Keys into Firmware
+
+If dual booting Windows:
+```
+sudo sbctl enroll-keys --microsoft
+```
+Linux-only system:
+```
+sudo sbctl enroll-keys
+```
+Reboot into BIOS after this step.
+
+* * *
+
+## 6\. Enable Secure Boot in BIOS
+
+- Enable Secure Boot
+    
+- Ensure UEFI mode
+    
+- Disable CSM
+    
+- Confirm system is no longer in Setup Mode
+    
+
+Save and reboot.
+
+* * *
+
+## 7\. Verify Secure Boot is Enabled
+```
+mokutil --sb-state
+```
+Expected output:
+
+SecureBoot enabled  
+Platform is in User Mode
+
+* * *
+
+## 8\. Sign Bootloader and Kernels
+
+Sign all detected EFI binaries and kernels:
+```
+sudo sbctl sign-all
+```
+Verify:
+```
+sudo sbctl verify
+```
+All entries should show as signed.
+
+* * *
+
+## 9\. Rebuild Initramfs
+```
+sudo mkinitcpio -P
+```
+Reboot.
+
+* * *
+
+## 10\. (Optional) NVIDIA Module Signing
+
+If using NVIDIA, sign kernel modules:
+```
+sudo sbctl sign -s /usr/lib/modules/\$(uname -r)/extramodules/nvidia\*.ko  
+sudo mkinitcpio -P
+```
+Reboot again.
+
+* * *
+
+## 11\. Final Verification
+```
+mokutil --sb-state  
+sudo sbctl verify
+```
+System should boot normally with Secure Boot enforced.
+
+* * *
+
+## Notes
+
+- `sbctl sign-all` should be run after kernel updates if auto-signing hooks are not configured.
+    
+- Secure Boot enforces signed bootloader, kernel, and modules.
+    
+- If system fails to boot, temporarily disable Secure Boot in BIOS and re-sign missing components.
+
+#### End of Article, feel free to reach out to me if you notice any errors or typos and I will gladly adjust. Retr0
