@@ -1,52 +1,83 @@
 ---
 layout: default
-show_logo: true
+title: Home
+description: "Retr0's Library — PC optimization guides, kernel tweaks, and system performance deep-dives."
 ---
 
-<!-- Main content wrapper -->
-<main class="homepage">
-  <!-- Intro section with welcome message and button -->
-  <section class="intro">
-    <div style="padding-top: 50px; padding-bottom: 30px;">
-      <h3>Welcome to the library of knowledge provided to you by Retr0.</h3>
-        <h6><a href=/shop><b><i>Products</i></b></a> are services soon-to-be provided such as a customized iso file or a utility to easily apply optimizations. The <a href=/info><b><i>About</i></b></a> section is where you can learn more about Retr0's Library and Retr0. <a href=/library><b><i>Library</i></b></a> contains all of my article uploads and the bulk of my optimization research. If you run into a topic that I haven't covered feel free to let me know via my <a href=/contact><b><i>Discord</i></b></a></h6>
-    </div>
-    <!-- Button that links to a separate page showing all blog posts -->
-    <a href="{{ site.baseurl }}/library/" class="view-posts-button">View All Posts</a>
-  </section>
-</main>
+<div class="homepage">
 
-<!-- Inline styles for this page -->
-<style>
-  .site-header {
-    text-align: center;
-    padding: 2rem;
-    background: #f4f4f4;
-  }
-  .site-header a {
-    text-decoration: none;
-    color: #333;
-    font-size: 2rem;
-  }
-  .homepage {
-    display: flex;
-    justify-content: center;
-    padding: 2rem;
-  }
-  .intro {
-    max-width: 600px;
-    text-align: center;
-  }
-  .view-posts-button {
-    display: inline-block;
-    margin-top: 1.5rem;
-    padding: 0.75rem 1.5rem;
-    background-color: #007acc;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-  }
-  .view-posts-button:hover {
-    background-color: #005f99;
-  }
-</style>
+  <!-- Hero -->
+  <section class="r-hero" aria-labelledby="hero-heading">
+    <div class="r-hero-tag">PC Optimization Knowledge Base</div>
+    <h1 id="hero-heading">Master Your <span>System</span><br>Performance</h1>
+    <p>Every optimization guide, tweak, and deep-dive you'll ever need — searchable and organized by category. Built by Retr0, for the community.</p>
+
+    <div class="r-hero-actions">
+      <a href="https://github.com/Retr0680/retr0680.github.io" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+        <i class="ti ti-brand-github" aria-hidden="true"></i> View on GitHub
+      </a>
+      <a href="{{ site.baseurl }}/library/" class="btn btn-secondary">Browse Library</a>
+    </div>
+
+    <!-- Stats -->
+    <div class="r-stats" aria-label="Site statistics">
+      <div class="r-stat">
+        <div class="r-stat-val">40+</div>
+        <div class="r-stat-label">Articles</div>
+      </div>
+      <div class="r-stat">
+        <div class="r-stat-val">8</div>
+        <div class="r-stat-label">Categories</div>
+      </div>
+      <div class="r-stat">
+        <div class="r-stat-val">∞</div>
+        <div class="r-stat-label">Hours Saved</div>
+      </div>
+    </div>
+
+    <!-- Search -->
+    <div class="r-search-wrap" role="search">
+      <i class="ti ti-search r-search-icon" aria-hidden="true"></i>
+      <input
+        class="r-search-bar"
+        type="search"
+        placeholder="Search any guide or topic..."
+        aria-label="Search posts"
+      />
+      <span class="r-search-hint" aria-hidden="true">/ to focus</span>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="r-cats" aria-labelledby="cats-heading">
+    <p class="r-section-label" id="cats-heading">Browse by category</p>
+    <div class="r-cat-grid">
+      <a href="{{ site.baseurl }}/library/#cpu" class="r-cat-card">
+        <i class="ti ti-cpu r-cat-icon" aria-hidden="true"></i>
+        <div class="r-cat-name">CPU & Overclocking</div>
+        <div class="r-cat-count">Tuning, power limits, undervolting</div>
+      </a>
+      <a href="{{ site.baseurl }}/library/#windows" class="r-cat-card">
+        <i class="ti ti-device-desktop r-cat-icon" aria-hidden="true"></i>
+        <div class="r-cat-name">Windows Tweaks</div>
+        <div class="r-cat-count">Debloat, registry, services</div>
+      </a>
+      <a href="{{ site.baseurl }}/library/#linux" class="r-cat-card">
+        <i class="ti ti-brand-arch r-cat-icon" aria-hidden="true"></i>
+        <div class="r-cat-name">Linux / CachyOS</div>
+        <div class="r-cat-count">CachyOS, Arch, kernel params</div>
+      </a>
+      <a href="{{ site.baseurl }}/library/#gaming" class="r-cat-card">
+        <i class="ti ti-device-gamepad-2 r-cat-icon" aria-hidden="true"></i>
+        <div class="r-cat-name">Gaming Performance</div>
+        <div class="r-cat-count">Latency, drivers, scheduler</div>
+      </a>
+      <a href="{{ site.baseurl }}/library/#android" class="r-cat-card">
+        <i class="ti ti-brand-android r-cat-icon" aria-hidden="true"></i>
+        <div class="r-cat-name">Android / Kernel</div>
+        <div class="r-cat-count">KernelSU, custom ROMs, modules</div>
+      </a>
+    </div>
+  </section>
+
+</div>

@@ -1,0 +1,21 @@
+<nav class="r-nav" id="r-nav" role="navigation" aria-label="Main navigation">
+  <div class="r-nav-inner">
+
+    <a href="{{ site.baseurl }}/" class="r-nav-logo" aria-label="{{ site.title }} home">
+      Retr0's <span>Library</span>
+    </a>
+
+    <button class="r-nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+      <i class="ti ti-menu-2" aria-hidden="true"></i>
+    </button>
+
+    <ul class="r-nav-links" id="nav-links" role="list">
+      <li><a href="{{ site.baseurl }}/" {% if page.url == '/' %}class="active"{% endif %}>Home</a></li>
+      <li><a href="{{ site.baseurl }}/library/" {% if page.url contains '/library' %}class="active"{% endif %}>Library</a></li>
+      <li><a href="{{ site.baseurl }}/shop/" {% if page.url contains '/shop' %}class="active"{% endif %}>Products</a></li>
+      <li><a href="{{ site.baseurl }}/contribute/" {% if page.url contains '/contribute' %}class="active"{% endif %}>Contribute</a></li>
+      <li><a href="{{ site.baseurl }}/info/" {% if page.url contains '/info' %}class="active"{% endif %}>About</a></li>
+    </ul>
+
+  </div>
+</nav>
