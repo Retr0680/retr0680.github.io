@@ -8,7 +8,7 @@ permalink: /aboutretr0/
 <div class="about-profile" markdown="0">
   <div class="about-avatar">R</div>
   <div class="about-profile-text">
-    <h2 class="about-handle">Retr0 <span class="about-handle-alias">/ Retr0680</span></h2>
+    <h2 class="about-handle">Retr0 <span class="about-handle-alias" style="font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:400;">/ Retr0680</span></h2>
     <p class="about-tagline">Systems tinkerer. Optimization obsessive. PC fixer-of-things.</p>
     <div class="about-links">
       <a href="https://github.com/Retr0680" target="_blank" rel="noopener noreferrer" class="about-link-btn">
