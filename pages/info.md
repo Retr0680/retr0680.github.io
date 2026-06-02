@@ -5,7 +5,7 @@ description: "What Retr0's Library is and why it exists."
 permalink: /info/
 ---
 
-<div class="about-site-grid">
+<div class="about-site-grid" markdown="0">
 
   <div class="about-site-block">
     <span class="about-site-icon"><i class="ti ti-books" aria-hidden="true"></i></span>
@@ -33,12 +33,12 @@ permalink: /info/
 
 </div>
 
-<div class="about-site-story">
+<div class="about-site-story" markdown="0">
   <p>One registry tweak led to another, and before long it was neck-deep in all things Windows. What started as a desperate attempt to get a few extra frames turned into a full-blown obsession with making PCs run better, smoother, faster.</p>
   <p>Retr0's Library is the result of all that trial, error, and the very recurring <em>"oops, I broke Windows again."</em></p>
 </div>
 
-<div class="about-cta-row">
+<div class="about-cta-row" markdown="0">
   <a href="/library/" class="btn btn-primary">
     <i class="ti ti-arrow-right" aria-hidden="true"></i> Start reading
   </a>
