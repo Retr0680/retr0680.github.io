@@ -1,55 +1,78 @@
 ---
-layout: page
+layout: default
 title: Library
+description: All optimization articles and guides by Retr0.
 permalink: /library/
 ---
 
-<input type="text" id="search-box" placeholder="Search posts..." style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;">
+<div class="library-page">
 
-<div class="posts" id="search-results">
-  {% assign all_posts = site.posts %}
-  {% for post in all_posts %}
-    <article style="display: none;">
-      <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
-      <p>{{ post.excerpt }}</p>
-      <a href="{{ post.url }}">Read more</a>
-    </article>
-  {% endfor %}
+  <header class="library-header">
+    <h1>Library</h1>
+    <p>All articles, guides and deep-dives — searchable below.</p>
+  </header>
+
+  <!-- Search (reuses homepage JS) -->
+  <div class="r-search-wrap" role="search" style="margin-bottom: 28px;">
+    <i class="ti ti-search r-search-icon" aria-hidden="true"></i>
+    <input
+      class="r-search-bar"
+      type="search"
+      placeholder="Search any command or description..."
+      aria-label="Search posts"
+    />
+    <span class="r-search-hint" aria-hidden="true">/ to focus</span>
+  </div>
+
+  <!-- Post list -->
+  <ul class="post-list" aria-label="Article list">
+    {% for post in paginator.posts %}
+    <li>
+      <a href="{{ post.url | prepend: site.baseurl }}" class="post-card">
+        <div class="post-card-title">{{ post.title }}</div>
+        {% if post.teaser %}
+        <div class="post-card-excerpt">{{ post.teaser }}</div>
+        {% elsif post.excerpt %}
+        <div class="post-card-excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</div>
+        {% endif %}
+        <div class="post-card-meta">
+          {% if post.date %}
+          <span><i class="ti ti-calendar" aria-hidden="true"></i>{{ post.date | date: "%b %d, %Y" }}</span>
+          {% endif %}
+          {% for cat in post.categories %}
+          <span class="post-cat-badge">{{ cat }}</span>
+          {% endfor %}
+        </div>
+      </a>
+    </li>
+    {% else %}
+    <li style="color: var(--text-lo); text-align: center; padding: 48px 0;">No posts yet — check back soon.</li>
+    {% endfor %}
+  </ul>
+
+  <!-- Pagination -->
+  {% if paginator.total_pages > 1 %}
+  <nav class="r-pagination" aria-label="Page navigation">
+    {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="r-page-btn">
+      <i class="ti ti-arrow-left" aria-hidden="true"></i> Prev
+    </a>
+    {% endif %}
+
+    {% for page in (1..paginator.total_pages) %}
+    <a
+      href="{% if page == 1 %}{{ site.baseurl }}/library/{% else %}{{ site.baseurl }}/library/page{{ page }}/{% endif %}"
+      class="r-page-btn {% if page == paginator.page %}active{% endif %}"
+      {% if page == paginator.page %}aria-current="page"{% endif %}
+    >{{ page }}</a>
+    {% endfor %}
+
+    {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="r-page-btn">
+      Next <i class="ti ti-arrow-right" aria-hidden="true"></i>
+    </a>
+    {% endif %}
+  </nav>
+  {% endif %}
+
 </div>
-
-<button id="load-more" style="margin-top: 1rem;">Show More</button>
-
-<script>
-  const searchBox = document.getElementById('search-box');
-  const posts = Array.from(document.querySelectorAll('#search-results article'));
-  const loadMoreBtn = document.getElementById('load-more');
-  let visibleCount = 0;
-  const batchSize = 10;
-
-  function showNextBatch() {
-    const nextBatch = posts.slice(visibleCount, visibleCount + batchSize);
-    nextBatch.forEach(p => p.style.display = 'block');
-    visibleCount += batchSize;
-    if (visibleCount >= posts.length) loadMoreBtn.style.display = 'none';
-  }
-
-  searchBox.addEventListener('input', () => {
-    const term = searchBox.value.toLowerCase().trim();
-    posts.forEach(post => {
-      const match = post.textContent.toLowerCase().includes(term);
-      post.style.display = match ? 'block' : 'none';
-    });
-    if (term) {
-      loadMoreBtn.style.display = 'none';
-    } else {
-      visibleCount = 0;
-      posts.forEach(p => p.style.display = 'none');
-      showNextBatch();
-    }
-  });
-
-  loadMoreBtn.addEventListener('click', showNextBatch);
-
-  // Show initial 10 posts
-  showNextBatch();
-</script>
