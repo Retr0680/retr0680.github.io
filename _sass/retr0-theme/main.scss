@@ -709,7 +709,8 @@ main { flex: 1; }
   margin-bottom: 6px;
 }
 .about-handle-alias {
-  font-size: 14px;
+  font-family: var(--font-mono);
+  font-size: 13px;
   font-weight: 400;
   color: var(--text-lo);
   letter-spacing: 0;
