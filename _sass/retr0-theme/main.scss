@@ -672,3 +672,156 @@ main { flex: 1; }
   letter-spacing: -0.05em;
 }
 .error-page p { color: var(--text-mid); margin: 12px 0 32px; }
+
+/* ---------- About — Meet Retr0 ---------- */
+.about-profile {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 40px;
+  padding-bottom: 32px;
+  border-bottom: 0.5px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.about-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--accent-dim);
+  border: 0.5px solid rgba(91, 156, 246, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-head);
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.about-handle {
+  font-family: var(--font-head);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-hi);
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+.about-handle-alias {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-lo);
+  letter-spacing: 0;
+}
+
+.about-tagline {
+  font-size: 14px;
+  color: var(--text-mid);
+  margin-bottom: 14px;
+}
+
+.about-links {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.about-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  font-weight: 600;
+  background: var(--bg-card);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 6px 14px;
+  color: var(--text-mid);
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+.about-link-btn:hover { border-color: var(--border-h); color: var(--text-hi); }
+.about-link-btn i { font-size: 15px; }
+
+.about-story {
+  margin-bottom: 36px;
+}
+.about-story p {
+  font-size: 15.5px;
+  color: var(--text-mid);
+  line-height: 1.85;
+  margin-bottom: 1.1em;
+}
+.about-story strong { color: var(--text-hi); font-weight: 600; }
+.about-story em { color: var(--accent); font-style: italic; }
+
+.about-cta-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding-top: 8px;
+}
+
+/* ---------- About — Site Info ---------- */
+.about-site-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
+.about-site-block {
+  background: var(--bg-card);
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px 18px;
+}
+
+.about-site-icon {
+  display: block;
+  font-size: 22px;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.about-site-block h3 {
+  font-family: var(--font-head);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-hi);
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+
+.about-site-block p {
+  font-size: 13.5px;
+  color: var(--text-mid);
+  line-height: 1.7;
+}
+
+.about-site-story {
+  margin-bottom: 32px;
+  padding: 20px 24px;
+  background: var(--bg-card);
+  border: 0.5px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-sm);
+}
+.about-site-story p {
+  font-size: 15px;
+  color: var(--text-mid);
+  line-height: 1.8;
+  margin-bottom: 0.8em;
+}
+.about-site-story p:last-child { margin-bottom: 0; }
+.about-site-story em { color: var(--accent); font-style: italic; }
+
+/* ---------- Library — no posts message ---------- */
+.no-posts-msg {
+  color: var(--text-lo);
+  text-align: center;
+  padding: 48px 0;
+  list-style: none;
+  font-size: 14px;
+}

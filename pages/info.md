@@ -1,12 +1,46 @@
 ---
 layout: page
-title: "About"
-teaser: "Back in 2020, I was just a guy with a potato PC trying to play Fortnite with my friend. Spoiler Alert: it didn’t go well. My system could barely run the game at slideshow FPS, and let’s just say I spent more time staring at loading screens than actually playing. That’s when I started digging into PC optimizations—not because I wanted to, but because I had to..."
-permalink: "/info/"
+title: About
+description: "What Retr0's Library is and why it exists."
+permalink: /info/
 ---
-...One registry tweak led to another, and before I knew it, I was neck-deep in all things Windows related. What started as a desperate attempt to get a few extra frames turned into a full-blown obsession with making PCs run better, smoother, faster.
 
-Retr0's Library is the result of all that trial, error, and the very reoccuring “oops, I broke Windows again.” It’s a collection of everything I’ve learned; curated guides, detailed tweaks, and explanations that make sense without needing a computer science degree.
+<div class="about-site-grid">
 
-If you're tired of lag, stutters, or just want to make your system feel like it had a shot of espresso, you're in the right place. I made this so you don’t have to suffer like I did. 
-[Visit the Library](/library) or learn more about [Retr0](/aboutretr0)
+  <div class="about-site-block">
+    <span class="about-site-icon"><i class="ti ti-books" aria-hidden="true"></i></span>
+    <h3>What is this?</h3>
+    <p>Retr0's Library is a curated collection of PC optimization guides, deep-dives, and tweaks — written so they actually make sense without needing a CS degree.</p>
+  </div>
+
+  <div class="about-site-block">
+    <span class="about-site-icon"><i class="ti ti-cpu" aria-hidden="true"></i></span>
+    <h3>What's covered?</h3>
+    <p>Windows debloating, CPU and GPU tuning, CachyOS and Arch Linux tweaks, gaming performance, kernel modules, and Android optimization.</p>
+  </div>
+
+  <div class="about-site-block">
+    <span class="about-site-icon"><i class="ti ti-users" aria-hidden="true"></i></span>
+    <h3>Who's it for?</h3>
+    <p>Anyone tired of lag, stutters, or just wanting to understand what's actually happening under the hood. Beginner-friendly framing, enthusiast-level depth.</p>
+  </div>
+
+  <div class="about-site-block">
+    <span class="about-site-icon"><i class="ti ti-heart" aria-hidden="true"></i></span>
+    <h3>Why free?</h3>
+    <p>Because most optimization knowledge is scattered across forums, YouTube comments, and decade-old Reddit posts. This is the single place I wish existed when I started.</p>
+  </div>
+
+</div>
+
+<div class="about-site-story">
+  <p>One registry tweak led to another, and before long it was neck-deep in all things Windows. What started as a desperate attempt to get a few extra frames turned into a full-blown obsession with making PCs run better, smoother, faster.</p>
+  <p>Retr0's Library is the result of all that trial, error, and the very recurring <em>"oops, I broke Windows again."</em></p>
+</div>
+
+<div class="about-cta-row">
+  <a href="/library/" class="btn btn-primary">
+    <i class="ti ti-arrow-right" aria-hidden="true"></i> Start reading
+  </a>
+  <a href="/aboutretr0/" class="btn btn-secondary">Meet Retr0</a>
+</div>
