@@ -828,3 +828,79 @@ main { flex: 1; }
   list-style: none;
   font-size: 14px;
 }
+
+/* ---------- Library category sections ---------- */
+.lib-cat-section {
+  margin-bottom: 48px;
+}
+
+.lib-cat-heading {
+  font-family: var(--font-head);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-hi);
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.lib-cat-heading i {
+  font-size: 17px;
+  color: var(--accent);
+}
+
+.lib-cat-count-badge {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 600;
+  background: var(--accent-dim);
+  color: var(--accent);
+  border: 0.5px solid rgba(91,156,246,0.25);
+  border-radius: 20px;
+  padding: 2px 10px;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- Library category sections ---------- */
+.lib-cat-section {
+  margin-bottom: 48px;
+}
+
+.lib-cat-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 0.5px solid var(--border);
+}
+
+.lib-cat-header i {
+  font-size: 18px;
+  color: var(--accent);
+}
+
+.lib-cat-header h2 {
+  font-family: var(--font-head);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-hi);
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.lib-cat-count {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 600;
+  background: var(--accent-dim);
+  color: var(--accent);
+  border: 0.5px solid rgba(91,156,246,0.25);
+  border-radius: 20px;
+  padding: 2px 10px;
+  letter-spacing: 0.04em;
+}

@@ -19,14 +19,14 @@ description: "Retr0's Library — PC optimization guides, kernel tweaks, and sys
       <a href="{{ site.baseurl }}/library/" class="btn btn-secondary">Browse Library</a>
     </div>
 
-    <!-- Stats -->
+    <!-- Stats: real counts from Jekyll -->
     <div class="r-stats" aria-label="Site statistics">
       <div class="r-stat">
-        <div class="r-stat-val">40+</div>
+        <div class="r-stat-val">{{ site.posts | size }}{% if site.posts.size == 0 %}0{% endif %}</div>
         <div class="r-stat-label">Articles</div>
       </div>
       <div class="r-stat">
-        <div class="r-stat-val">8</div>
+        <div class="r-stat-val">{{ site.categories | size }}</div>
         <div class="r-stat-label">Categories</div>
       </div>
       <div class="r-stat">
@@ -48,35 +48,61 @@ description: "Retr0's Library — PC optimization guides, kernel tweaks, and sys
     </div>
   </section>
 
-  <!-- Categories -->
+  <!-- Categories: auto-populated from site.categories -->
   <section class="r-cats" aria-labelledby="cats-heading">
     <p class="r-section-label" id="cats-heading">Browse by category</p>
     <div class="r-cat-grid">
-      <a href="{{ site.baseurl }}/library/#cpu" class="r-cat-card">
-        <i class="ti ti-cpu r-cat-icon" aria-hidden="true"></i>
-        <div class="r-cat-name">CPU & Overclocking</div>
-        <div class="r-cat-count">Tuning, power limits, undervolting</div>
-      </a>
-      <a href="{{ site.baseurl }}/library/#windows" class="r-cat-card">
-        <i class="ti ti-device-desktop r-cat-icon" aria-hidden="true"></i>
-        <div class="r-cat-name">Windows Tweaks</div>
-        <div class="r-cat-count">Debloat, registry, services</div>
-      </a>
-      <a href="{{ site.baseurl }}/library/#linux" class="r-cat-card">
-        <i class="ti ti-brand-arch r-cat-icon" aria-hidden="true"></i>
-        <div class="r-cat-name">Linux / CachyOS</div>
-        <div class="r-cat-count">CachyOS, Arch, kernel params</div>
-      </a>
-      <a href="{{ site.baseurl }}/library/#gaming" class="r-cat-card">
-        <i class="ti ti-device-gamepad-2 r-cat-icon" aria-hidden="true"></i>
-        <div class="r-cat-name">Gaming Performance</div>
-        <div class="r-cat-count">Latency, drivers, scheduler</div>
-      </a>
-      <a href="{{ site.baseurl }}/library/#android" class="r-cat-card">
-        <i class="ti ti-brand-android r-cat-icon" aria-hidden="true"></i>
-        <div class="r-cat-name">Android / Kernel</div>
-        <div class="r-cat-count">KernelSU, custom ROMs, modules</div>
-      </a>
+
+      {% assign cat_icons = "cpu:ti-cpu,windows:ti-device-desktop,linux:ti-brand-arch,gaming:ti-device-gamepad-2,android:ti-brand-android" | split: "," %}
+
+      {% assign cat_labels = "cpu:CPU & Overclocking,windows:Windows Tweaks,linux:Linux / CachyOS,gaming:Gaming Performance,android:Android / Kernel" | split: "," %}
+
+      {% assign cat_descs = "cpu:Tuning, power limits, undervolting,windows:Debloat, registry, services,linux:CachyOS, Arch, kernel params,gaming:Latency, drivers, scheduler,android:KernelSU, custom ROMs, modules" | split: "," %}
+
+      {% assign defined_cats = "cpu,windows,linux,gaming,android" | split: "," %}
+
+      {% for cat_slug in defined_cats %}
+        {% assign cat_posts = site.categories[cat_slug] %}
+        {% assign cat_count = cat_posts | size %}
+
+        {% assign icon_class = "ti-folder" %}
+        {% for entry in cat_icons %}
+          {% assign parts = entry | split: ":" %}
+          {% if parts[0] == cat_slug %}{% assign icon_class = parts[1] %}{% endif %}
+        {% endfor %}
+
+        {% assign label = cat_slug %}
+        {% for entry in cat_labels %}
+          {% assign parts = entry | split: ":" %}
+          {% if parts[0] == cat_slug %}{% assign label = parts[1] %}{% endif %}
+        {% endfor %}
+
+        {% assign desc = "" %}
+        {% for entry in cat_descs %}
+          {% assign parts = entry | split: ":" %}
+          {% if parts[0] == cat_slug %}{% assign desc = parts[1] %}{% endif %}
+        {% endfor %}
+
+        <a href="{{ site.baseurl }}/library/#{{ cat_slug }}" class="r-cat-card">
+          <i class="ti {{ icon_class }} r-cat-icon" aria-hidden="true"></i>
+          <div class="r-cat-name">{{ label }}</div>
+          <div class="r-cat-count">
+            {% if cat_count > 0 %}{{ cat_count }} article{% if cat_count != 1 %}s{% endif %}{% else %}{{ desc }}{% endif %}
+          </div>
+        </a>
+      {% endfor %}
+
+      <!-- Any extra categories not in the defined list -->
+      {% for cat in site.categories %}
+        {% unless defined_cats contains cat[0] %}
+        <a href="{{ site.baseurl }}/library/#{{ cat[0] }}" class="r-cat-card">
+          <i class="ti ti-folder r-cat-icon" aria-hidden="true"></i>
+          <div class="r-cat-name">{{ cat[0] | capitalize }}</div>
+          <div class="r-cat-count">{{ cat[1] | size }} article{% if cat[1].size != 1 %}s{% endif %}</div>
+        </a>
+        {% endunless %}
+      {% endfor %}
+
     </div>
   </section>
 
