@@ -3,6 +3,8 @@ layout: post
 title: "How to Import Power Plans"
 date: 2025-06-04
 permalink: /importpow/
+categories: [windows]
+teaser: "Step-by-step guide to importing .pow power plan files into Windows, including hidden plan fixes and custom GUIDs."
 ---
 Here is an easy four step guide on how to import power plans into your system
 <!--more--> 

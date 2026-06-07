@@ -9,29 +9,24 @@ permalink: /library/
 
   <header class="library-header">
     <h1>Library</h1>
-    <p>{{ site.posts | size }} article{% if site.posts.size != 1 %}s{% endif %} across {{ site.categories | size }} categor{% if site.categories.size == 1 %}y{% else %}ies{% endif %}.</p>
+    <p>{{ site.posts | size }} article{% if site.posts.size != 1 %}s{% endif %}{% if site.categories.size > 0 %} across {{ site.categories | size }} categor{% if site.categories.size == 1 %}y{% else %}ies{% endif %}{% endif %}.</p>
   </header>
 
-  <!-- Search -->
   <div class="r-search-wrap" role="search" style="margin-bottom: 36px;">
     <i class="ti ti-search r-search-icon" aria-hidden="true"></i>
-    <input
-      class="r-search-bar"
-      type="search"
-      placeholder="Search any command or description..."
-      aria-label="Search posts"
-      id="lib-search"
-    />
+    <input class="r-search-bar" type="search" placeholder="Search any command or description..." aria-label="Search posts" id="lib-search" />
     <span class="r-search-hint" aria-hidden="true">/ to focus</span>
   </div>
 
   {% if site.posts.size > 0 %}
 
-    {% assign defined_cats = "cpu,windows,linux,gaming,android" | split: "," %}
-    {% assign cat_labels = "cpu:CPU & Overclocking,windows:Windows Tweaks,linux:Linux / CachyOS,gaming:Gaming Performance,android:Android / Kernel" | split: "," %}
-    {% assign cat_icons  = "cpu:ti-cpu,windows:ti-device-desktop,linux:ti-brand-arch,gaming:ti-device-gamepad-2,android:ti-brand-android" | split: "," %}
+    {% assign defined_cats = "cpu,windows,linux,gaming,android,diy" | split: "," %}
+    {% assign cat_labels   = "cpu:CPU & Overclocking,windows:Windows Tweaks,linux:Linux / CachyOS,gaming:Gaming Performance,android:Android / Kernel,diy:DIY & Hardware" | split: "," %}
+    {% assign cat_icons    = "cpu:ti-cpu,windows:ti-device-desktop,linux:ti-brand-arch,gaming:ti-device-gamepad-2,android:ti-brand-android,diy:ti-tool" | split: "," %}
 
-    <!-- Render defined categories first, in order -->
+    {% comment %} Track which posts have been rendered so we can catch uncategorized ones {% endcomment %}
+    {% assign rendered_urls = "" %}
+
     {% for cat_slug in defined_cats %}
       {% assign cat_posts = site.categories[cat_slug] %}
       {% if cat_posts.size > 0 %}
@@ -54,23 +49,19 @@ permalink: /library/
             <h2>{{ label }}</h2>
             <span class="lib-cat-count">{{ cat_posts | size }}</span>
           </div>
-          <ul class="post-list" aria-label="{{ label }} articles">
+          <ul class="post-list">
             {% for post in cat_posts %}
-            <li>
-              <a href="{{ post.url | prepend: site.baseurl }}" class="post-card">
-                <div class="post-card-title">{{ post.title }}</div>
-                {% if post.teaser %}
-                <div class="post-card-excerpt">{{ post.teaser }}</div>
-                {% elsif post.excerpt %}
-                <div class="post-card-excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</div>
-                {% endif %}
-                <div class="post-card-meta">
-                  {% if post.date %}
-                  <span><i class="ti ti-calendar" aria-hidden="true"></i>{{ post.date | date: "%b %d, %Y" }}</span>
-                  {% endif %}
-                </div>
-              </a>
-            </li>
+              {% assign rendered_urls = rendered_urls | append: post.url | append: "|" %}
+              <li>
+                <a href="{{ post.url | prepend: site.baseurl }}" class="post-card">
+                  <div class="post-card-title">{{ post.title }}</div>
+                  {% if post.teaser %}<div class="post-card-excerpt">{{ post.teaser }}</div>
+                  {% elsif post.excerpt %}<div class="post-card-excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</div>{% endif %}
+                  <div class="post-card-meta">
+                    {% if post.date %}<span><i class="ti ti-calendar" aria-hidden="true"></i>{{ post.date | date: "%b %d, %Y" }}</span>{% endif %}
+                  </div>
+                </a>
+              </li>
             {% endfor %}
           </ul>
         </section>
@@ -78,7 +69,7 @@ permalink: /library/
       {% endif %}
     {% endfor %}
 
-    <!-- Any extra categories not in the defined list -->
+    {% comment %} Any extra non-defined categories {% endcomment %}
     {% for cat in site.categories %}
       {% unless defined_cats contains cat[0] %}
         <section class="lib-cat-section post-group" id="{{ cat[0] }}">
@@ -87,50 +78,49 @@ permalink: /library/
             <h2>{{ cat[0] | capitalize }}</h2>
             <span class="lib-cat-count">{{ cat[1] | size }}</span>
           </div>
-          <ul class="post-list" aria-label="{{ cat[0] }} articles">
+          <ul class="post-list">
             {% for post in cat[1] %}
-            <li>
-              <a href="{{ post.url | prepend: site.baseurl }}" class="post-card">
-                <div class="post-card-title">{{ post.title }}</div>
-                {% if post.teaser %}
-                <div class="post-card-excerpt">{{ post.teaser }}</div>
-                {% elsif post.excerpt %}
-                <div class="post-card-excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</div>
-                {% endif %}
-                <div class="post-card-meta">
-                  {% if post.date %}
-                  <span><i class="ti ti-calendar" aria-hidden="true"></i>{{ post.date | date: "%b %d, %Y" }}</span>
-                  {% endif %}
-                </div>
-              </a>
-            </li>
+              {% assign rendered_urls = rendered_urls | append: post.url | append: "|" %}
+              <li>
+                <a href="{{ post.url | prepend: site.baseurl }}" class="post-card">
+                  <div class="post-card-title">{{ post.title }}</div>
+                  {% if post.teaser %}<div class="post-card-excerpt">{{ post.teaser }}</div>
+                  {% elsif post.excerpt %}<div class="post-card-excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</div>{% endif %}
+                  <div class="post-card-meta">
+                    {% if post.date %}<span><i class="ti ti-calendar" aria-hidden="true"></i>{{ post.date | date: "%b %d, %Y" }}</span>{% endif %}
+                  </div>
+                </a>
+              </li>
             {% endfor %}
           </ul>
         </section>
       {% endunless %}
     {% endfor %}
 
-    <!-- Uncategorized posts -->
-    {% assign uncategorized = site.posts | where: "categories", "" %}
-    {% if uncategorized.size > 0 %}
+    {% comment %} Uncategorized: posts with empty categories array {% endcomment %}
+    {% assign uncategorized_posts = "" | split: "" %}
+    {% for post in site.posts %}
+      {% if post.categories.size == 0 %}
+        {% assign uncategorized_posts = uncategorized_posts | push: post %}
+      {% endif %}
+    {% endfor %}
+
+    {% if uncategorized_posts.size > 0 %}
       <section class="lib-cat-section post-group" id="uncategorized">
         <div class="lib-cat-header">
           <i class="ti ti-archive" aria-hidden="true"></i>
           <h2>Uncategorized</h2>
-          <span class="lib-cat-count">{{ uncategorized | size }}</span>
+          <span class="lib-cat-count">{{ uncategorized_posts | size }}</span>
         </div>
         <ul class="post-list">
-          {% for post in uncategorized %}
+          {% for post in uncategorized_posts %}
           <li>
             <a href="{{ post.url | prepend: site.baseurl }}" class="post-card">
               <div class="post-card-title">{{ post.title }}</div>
-              {% if post.excerpt %}
-              <div class="post-card-excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</div>
-              {% endif %}
+              {% if post.teaser %}<div class="post-card-excerpt">{{ post.teaser }}</div>
+              {% elsif post.excerpt %}<div class="post-card-excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</div>{% endif %}
               <div class="post-card-meta">
-                {% if post.date %}
-                <span><i class="ti ti-calendar" aria-hidden="true"></i>{{ post.date | date: "%b %d, %Y" }}</span>
-                {% endif %}
+                {% if post.date %}<span><i class="ti ti-calendar" aria-hidden="true"></i>{{ post.date | date: "%b %d, %Y" }}</span>{% endif %}
               </div>
             </a>
           </li>
@@ -153,13 +143,13 @@ permalink: /library/
     var q = input.value.toLowerCase().trim();
     document.querySelectorAll('.post-group').forEach(function(group){
       var cards = group.querySelectorAll('.post-card');
-      var groupVisible = false;
+      var visible = false;
       cards.forEach(function(card){
         var match = !q || card.textContent.toLowerCase().includes(q);
         card.parentElement.style.display = match ? '' : 'none';
-        if (match) groupVisible = true;
+        if (match) visible = true;
       });
-      group.style.display = groupVisible ? '' : 'none';
+      group.style.display = visible ? '' : 'none';
     });
   });
 })();

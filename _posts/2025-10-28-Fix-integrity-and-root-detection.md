@@ -3,6 +3,8 @@ layout: post
 title: "Fix Play Integrity and Root Detection"
 date: 2025-10-28
 permalink: /pif/
+categories: [android]
+teaser: "Fix Play Integrity and root detection on Android using ReZygisk, PlayIntegrityFix, and TrickyStore."
 ---
 Step by step guide on how to fix play integrity and root detection.
 <!--more-->

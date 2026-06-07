@@ -3,6 +3,8 @@ layout: post
 title: "How to Burn Bootloader on your Arduino Pro Micro"
 date: 2026-08-06
 permalink: /pro_micro/
+categories: [diy]
+teaser: "How to burn a bootloader onto a bricked Arduino Pro Micro using an Arduino Uno as an ISP programmer."
 ---
 Step by step guide on how to flash bootloader on your arduino pro micro.
 <!--more-->
