@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Aim Tweaks"
-date: 
+date: 2025-09-01
 permalink: /aimweak/
 categories: [windows]
 teaser: "Exposing 'Aim Tweaks' sold by creators like Risxn — what the code actually does and why the claims are false."
