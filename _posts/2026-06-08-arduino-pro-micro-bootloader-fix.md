@@ -12,12 +12,12 @@ Step by step guide on how to flash bootloader on your arduino pro micro.
 # Pin Diagram
 
 ARDUINO UNO – ARDUINO PRO MICRO CONNECTIONS
-Connect the Arduino Uno 5V pin to Arduino Pro Micro VCC pin (red wire)
-Connect the Arduino Uno GND pin to Arduino Pro Micro GND pin (black wire)
-Connect the Arduino Uno Pin 13 to Arduino Pro Micro Pin 15 (blue wire)
-Connect the Arduino Uno Pin 12 to Arduino Pro Micro Pin 14 (green wire)
-Connect the Arduino Uno Pin 11 to Arduino Pro Micro Pin 16 (yellow wire)
-Connect the Arduino Uno Pin 10 to Arduino Pro Micro Pin RST (white wire)Image below shows how I connected the two boards based from the connections above:
+- Connect the Arduino Uno 5V pin to Arduino Pro Micro VCC pin (red wire)
+- Connect the Arduino Uno GND pin to Arduino Pro Micro GND pin (black wire)
+- Connect the Arduino Uno Pin 13 to Arduino Pro Micro Pin 15 (blue wire)
+- Connect the Arduino Uno Pin 12 to Arduino Pro Micro Pin 14 (green wire)
+- Connect the Arduino Uno Pin 11 to Arduino Pro Micro Pin 16 (yellow wire)
+- Connect the Arduino Uno Pin 10 to Arduino Pro Micro Pin RST (white wire)Image below shows how I connected the two boards based from the connections above:
 
 ![wiring](/images/pro_micro/1.png)
 ![wiring1](/images/pro_micro/2.png)
