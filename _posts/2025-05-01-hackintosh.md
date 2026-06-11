@@ -3,7 +3,7 @@ layout: post
 title: "Create a Full Offline macOS Installer on Windows"
 date: 2025-05-01
 permalink: /hackintosh/
-categories: [linux]
+categories: [diy]
 teaser: "How to create a full offline macOS installer USB on Windows using gibMacOS, BDU, and OpenCore — no internet required on the target machine."
 ---
 
