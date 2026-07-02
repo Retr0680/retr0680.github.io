@@ -21,8 +21,8 @@ permalink: /library/
   {% if site.posts.size > 0 %}
 
     {% assign defined_cats = "cpu,windows,linux,gaming,android,diy" | split: "," %}
-    {% assign cat_labels   = "cpu:CPU & Overclocking,windows:Windows Tweaks,linux:Linux / CachyOS,gaming:Gaming Performance,android:Android / Kernel,diy:DIY & Hardware" | split: "," %}
-    {% assign cat_icons    = "cpu:ti-cpu,windows:ti-device-desktop,linux:ti-brand-arch,gaming:ti-device-gamepad-2,android:ti-brand-android,diy:ti-tool" | split: "," %}
+    {% assign cat_labels   = "cpu:CPU & Overclocking,windows:Windows Tweaks,linux:Linux,gaming:Gaming Performance,android:Android / Kernel,diy:DIY & Hardware" | split: "," %}
+    {% assign cat_icons    = "cpu:ti-cpu,windows:ti-device-desktop,linux:ti-terminal-2,gaming:ti-device-gamepad-2,android:ti-brand-android,diy:ti-tool" | split: "," %}
 
     {% comment %} Track which posts have been rendered so we can catch uncategorized ones {% endcomment %}
     {% assign rendered_urls = "" %}
