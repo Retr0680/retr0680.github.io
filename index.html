@@ -13,9 +13,10 @@ description: "Retr0's Library — PC optimization guides, kernel tweaks, and sys
     <p>Every optimization guide, tweak, and deep-dive you'll ever need — searchable and organized by category. Built by Retr0, for the community.</p>
 
     <div class="r-hero-actions">
-      <a href="{{ site.baseurl }}/library/" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-        <i aria-hidden="true"></i> Browse Library
+      <a href="https://github.com/Retr0680/retr0680.github.io" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+        <i class="ti ti-brand-github" aria-hidden="true"></i> View on GitHub
       </a>
+      <a href="{{ site.baseurl }}/library/" class="btn btn-secondary">Browse Library</a>
     </div>
 
     <!-- Stats: real counts from Jekyll -->
@@ -52,9 +53,9 @@ description: "Retr0's Library — PC optimization guides, kernel tweaks, and sys
     <p class="r-section-label" id="cats-heading">Browse by category</p>
     <div class="r-cat-grid">
 
-      {% assign cat_icons = "cpu:ti-cpu,windows:ti-device-desktop,linux:ti-brand-arch,gaming:ti-device-gamepad-2,android:ti-brand-android" | split: "," %}
+      {% assign cat_icons = "cpu:ti-cpu,windows:ti-device-desktop,linux:ti-terminal-2,gaming:ti-device-gamepad-2,android:ti-brand-android" | split: "," %}
 
-      {% assign cat_labels = "cpu:CPU & Overclocking,windows:Windows Tweaks,linux:Linux / CachyOS,gaming:Gaming Performance,android:Android / Kernel,diy:DIY & Hardware" | split: "," %}
+      {% assign cat_labels = "cpu:CPU & Overclocking,windows:Windows Tweaks,linux:Linux,gaming:Gaming Performance,android:Android / Kernel,diy:DIY & Hardware" | split: "," %}
 
       {% assign cat_descs = "cpu:Tuning, power limits, undervolting,windows:Debloat, registry, services,linux:CachyOS, Arch, kernel params,gaming:Latency, drivers, scheduler,android:KernelSU, custom ROMs, modules,diy:Arduino, hardware builds" | split: "," %}
 
