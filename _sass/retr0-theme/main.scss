@@ -904,3 +904,27 @@ main { flex: 1; }
   padding: 2px 10px;
   letter-spacing: 0.04em;
 }
+
+/* ---------- Post body table fix ---------- */
+.post-body table {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.post-body table th,
+.post-body table td {
+  white-space: normal;
+  min-width: 120px;
+  max-width: 340px;
+  vertical-align: top;
+}
+
+/* Code inside tables: wrap instead of overflow */
+.post-body table code {
+  display: inline-block;
+  white-space: pre-wrap;
+  word-break: break-all;
+  max-width: 280px;
+}
