@@ -1,3 +1,4 @@
+venv/
 _site
 .DS_Store
 .jekyll
@@ -12,3 +13,4 @@ package.json
 # ---
 # show_logo: true
 # ---
+_posts/2026-07-01-proton.md

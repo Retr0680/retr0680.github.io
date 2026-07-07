@@ -928,3 +928,69 @@ main { flex: 1; }
   word-break: break-all;
   max-width: 280px;
 }
+
+/* ---------- Proton compatibility table ---------- */
+.proton-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 24px 0;
+  border: 0.5px solid var(--border);
+  border-radius: var(--radius-md);
+}
+
+.proton-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  white-space: nowrap; /* keeps each row on one line; cells wrap internally */
+}
+
+.proton-table th {
+  background: rgba(255,255,255,0.06);
+  color: var(--text-hi);
+  font-weight: 600;
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 0.5px solid var(--border);
+  white-space: nowrap;
+}
+
+.proton-table td {
+  padding: 12px 16px;
+  color: var(--text-mid);
+  border-bottom: 0.5px solid rgba(255,255,255,0.05);
+  vertical-align: top;
+  white-space: normal;       /* cells wrap their own content */
+  max-width: 260px;
+  min-width: 100px;
+}
+
+.proton-table tr:last-child td {
+  border-bottom: none;
+}
+
+.proton-table tr:hover td {
+  background: rgba(91,156,246,0.04);
+}
+
+/* Code inside proton table: wrap long strings cleanly */
+.proton-table td code {
+  display: inline-block;
+  white-space: pre-wrap;
+  word-break: break-all;
+  background: rgba(255,255,255,0.07);
+  border: 0.5px solid var(--border);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 12px;
+  color: #a8c8f8;
+  max-width: 240px;
+}
+
+/* Config column image */
+.proton-table td img {
+  max-width: 140px;
+  border-radius: 6px;
+  border: 0.5px solid var(--border);
+  display: block;
+}
