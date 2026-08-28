@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "How to use NTFS Drive on Linux"
+title: "Use NTFS Drive on Linux"
 date: 2026-08-28
 permalink: /lowntfs/
 categories: [linux]
